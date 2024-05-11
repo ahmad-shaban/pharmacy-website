@@ -1,49 +1,33 @@
-import "./styles/App.css";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import Admin from "./pages/Admin";
-import LoginSignup from "./pages/LoginSignup";
-import Favorites from "./pages/Favorites";
-import Category from "./pages/Category";
-import Product from "./pages/Product";
-import ProtectedRoutes from "./utils/ProtectedRoutes";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import Category from './pages/Category';
+import Shop from './pages/Shop';
+import Product from './pages/Product';
+import Cart from './pages/Cart';
+import LoginSingup from './pages/LoginSingup';
+import Footer from './components/Footer/Footer';
 
 function App() {
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route element={<ProtectedRoutes />}>
-					<Route path='/' element={<Home />} />
-					<Route path='/profile' element={<Profile />} />
-					<Route path='/admin' element={<Admin />} />
-					<Route path='/favorites' element={<Favorites />} />
-					<Route path='/category/:categoryName' element={<Category />} />
-					<Route path='/product/:productId' element={<Product />} />
-				</Route>
-				<Route path='/login-signup' element={<LoginSignup />} />
-				<Route
-					path='*'
-					element={
-						<h1
-							style={{
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-								height: "100vh",
-								color: "red",
-								margin: "0",
-								fontSize: "10vw",
-								userSelect: "none",
-							}}
-						>
-							404 Wrong path
-						</h1>
-					}
-				/>
-			</Routes>
-		</BrowserRouter>
-	);
+  return (
+    <div>
+      <BrowserRouter>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Shop />} />
+          <Route path="/drugs" element={<Category category="drugs" />} />
+          <Route path="/skin-care" element={<Category category="skin-care" />} />
+          <Route path="/baby-care" element={<Category category="baby-care" />} />
+          <Route path="product" element={<Product />}>
+            <Route path=":productId" element={<Product />} />
+          </Route>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<LoginSingup />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer/>
+    </div>
+  );
 }
 
 export default App;
