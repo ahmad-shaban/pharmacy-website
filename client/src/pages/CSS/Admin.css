@@ -1,0 +1,31 @@
+#admin main {
+    width: 69%;
+    min-height: calc(100vh - 112px);
+    margin: 0 auto;
+}
+  
+#admin main > h1 {
+    padding-top: 70px;
+    margin-bottom: 30px;
+}
+
+#admin input[type='text'] {
+    width: 60%;
+    height: 20px;
+    background: #eee;
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#admin input[type='submit'] {
+    margin: 15px 10px 30px;
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(255, 183, 0);
+}

@@ -5,7 +5,8 @@ import Category from './pages/Category';
 import Shop from './pages/Shop';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
-import LoginSingup from './pages/LoginSingup';
+import LoginSignup from './pages/LoginSignup';
+import Admin from './pages/Admin';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
             <Route path=":productId" element={<Product />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<LoginSingup />} />
+          <Route path="/login" element={<LoginSignup />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
       <Footer/>
