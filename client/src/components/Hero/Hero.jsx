@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="hero-left">
         <div>
           <div className='hero-cart'>
-\            <img src={discount} alt="" />
+            <img src={discount} alt="" />
           </div>
           <p>for ALL</p>
           <p>categories</p>
