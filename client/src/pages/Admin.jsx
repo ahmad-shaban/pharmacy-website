@@ -1,6 +1,4 @@
 import "./CSS/Admin.css";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import axios from "axios";
 import { useState } from "react";
 
