@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ProductShow.css';
+import { ShopContext } from '../../context/ShopContext';
 
 const ProductShow = (props) => {
   const { product } = props;
+  const {addToCart } = useContext(ShopContext)
   return (
     <div className="product-show">
       <div className="product-show-left">
@@ -19,7 +21,7 @@ const ProductShow = (props) => {
           life. Crafted with care and precision to meet your health and wellness
           needs.
         </div>
-        <button>ADD TO CART</button>
+        <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
       </div>
     </div>
   );
