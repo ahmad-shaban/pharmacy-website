@@ -1,15 +1,15 @@
 import React from 'react'
 import './Popular.css'
-import productInfo from '../../assets/data'
 import Item from '../Item/Item'
+import allProducts from './../../assets/allProducts';
 
 const Popular = () => {
   return (
     <div className='popular'>
-      <h1>POPULAR PRODUCTS SELECTED FOR YOU</h1>
+      <h1>BEST PRODUCTS SELECTED FOR YOU</h1>
       <hr />
         <div className="popular-item">
-            {productInfo.map((item,i)=>{
+            {allProducts.map((item,i)=>{
                 return <Item key={i} id={item.id} name={item.name} 
                 image={item.image} old_price={item.old_price} new_price={item.new_price}/>
             })}

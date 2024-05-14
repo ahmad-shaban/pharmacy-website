@@ -5,6 +5,7 @@ import App from './App';
 import ShopContextProvider from './context/ShopContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
     <ShopContextProvider>
       <App />

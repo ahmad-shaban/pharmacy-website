@@ -1,6 +1,7 @@
 .hero{
     height: 100vh;
-    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    background-image: url(../../assets/background3.jpg);
+    background-size:cover;
     display: flex;
 }
 .hero-left{
@@ -42,13 +43,32 @@
     font-size: 22px;
     font-weight: 500;
     margin-top: 30px;
-    background-color: #ff4141;
+    background-color: rgb(255, 183, 0);
     cursor: pointer;
   }
   .hero-latest-arrival button:active {
-    background-color: #f06a6a8c;
+    background-color: rgba(255, 183, 0, 0.678);
   }
-.hero-right img{
-    width: 500px;
-    margin: 50px;
+  .introduction-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 2;
+    color: #333;
+    text-align: center;
+    max-width: 90%;
+}
+.introduction-text span{
+    color:rgb(255, 183, 0);
+    font-size: 45px;
+}
+.introduction-text h1 {
+    font-size: 30px;
+    margin:0 0 12px;
+}
+@media (max-width:575px){
+    .introduction-text h1 {
+        font-size: 26px;
+    }
 }

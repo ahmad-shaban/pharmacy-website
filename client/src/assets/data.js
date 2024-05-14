@@ -1,32 +1,40 @@
-import drug2 from './medicine (3).svg';
-import drug from './medicine 4.svg';
-import taps from './medicine (2).svg';
+import baby1 from './baby1.jpg';
+import skin3 from './skin3.jpg';
+import men1 from './men1.jpg'
+import women2 from './women2.jpg';
 
 let productInfo = [
   {
-    id: 1,
-    name: 'drug1',
-    category: 'drugs',
-    image: drug2,
-    old_price: 30.0,
-    new_price: 25.0,
-  },
+      id: 4,
+      name: "Africa's Best Kids Organics Hair Nutrition Protein Enriched Conditioner 426 gm",
+      category: 'baby-care',
+      image: baby1,
+      old_price: 300.0,
+      new_price: 250.0,
+    },
   {
-    id: 2,
-    name: 'drug2',
-    category: 'drugs',
-    image: drug,
-    old_price: 60.0,
-    new_price: 54.0,
-  },
+      id: 20,
+      name: 'DR.RASHEL Whiten & Tightening Feminine Wash 50 ml',
+      category: 'women-care',
+      image: women2,
+      old_price: 90.0,
+      new_price: 60.5,
+    },
   {
-    id: 3,
-    name: 'taps',
-    category: 'drugs',
-    image: taps,
-    old_price: 15.0,
-    new_price: 13.50,
-  },
-];
+      id: 23,
+      name: 'Amanda BB Cream 01 - 30 ml',
+      category: 'skin-care',
+      image: skin3,
+      old_price: 45.0,
+      new_price: 37.0,
+    },
+  {
+      id: 25,
+      name: 'Nivea MEN Fresh & Cool Shaving Foam 200ml',
+      category: 'men-care',
+      image: men1,
+      old_price: 40.0,
+      new_price: 33.0,
+    },];
 
 export default productInfo;
