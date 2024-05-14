@@ -1,6 +1,5 @@
 import React from 'react'
 import './NewArrival.css'
-import Item from '../Item/Item'
 import productInfo from '../../assets/data';
 import Slider from '../Slider/Slider';
 

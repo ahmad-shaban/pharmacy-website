@@ -3,14 +3,15 @@ import { ObjectId } from "mongodb";
 
 // Create a new product
 const create_product = async (req, res) => {
-	const { name, description, category, price, image } = req.body;
+	const { name, description, category, image, old_price, new_price } = req.body;
 	try {
 		const product = await Product.create({
 			name,
 			description,
 			category,
-			price,
 			image,
+			old_price,
+			new_price,
 		});
 		res.status(201).send(product);
 	} catch (err) {

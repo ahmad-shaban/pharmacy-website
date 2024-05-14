@@ -13,7 +13,7 @@ const Category = (props) => {
             return (
               <Item
                 key={i}
-                id={item.id}
+                id={item._id}
                 name={item.name}
                 image={item.image}
                 old_price={item.old_price}

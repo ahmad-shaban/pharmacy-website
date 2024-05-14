@@ -72,7 +72,7 @@
 }
 
 #login-signup input[type="submit"]:hover {
-	background: #6d44b8;
+	background: #444;
 }
 
 #login-signup .login {
@@ -97,8 +97,8 @@
 	line-height: 1.8;
 	font-weight: bold;
 	text-align: center;
-	color: red;
-	background-color: #1a004ce0;
+	color: rgb(255, 183, 0);
+	background-color: #333333e0;
 	position: absolute;
 	z-index: 2;
 }

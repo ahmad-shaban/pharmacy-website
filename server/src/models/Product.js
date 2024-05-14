@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { version } from 'mongoose';
 
 const productSchema = new mongoose.Schema({
 	name: {
@@ -13,14 +13,18 @@ const productSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	price: {
-		type: Number,
-		required: true
-	},
 	image: {
 		type: String,
 		required: true
+	},
+	old_price: {
+		type: Number,
+		required: true
+	},
+	new_price: {
+		type: Number,
+		required: true
 	}
-});
+}, {versionKey: false});
 
 export const Product = mongoose.model('Product', productSchema);
