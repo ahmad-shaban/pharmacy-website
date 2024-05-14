@@ -17,7 +17,7 @@ const ProductShow = (props) => {
           <div className="new-price">${product.new_price}</div>
         </div>
         <div className="description">
-          Introducing {product.name}, your solution for a healthier, happier
+          your solution for a healthier, happier
           life. Crafted with care and precision to meet your health and wellness
           needs.
         </div>

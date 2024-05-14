@@ -13,12 +13,16 @@ const productSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	price: {
+	image: {
+		type: String,
+		required: true
+	},
+	old_price: {
 		type: Number,
 		required: true
 	},
-	image: {
-		type: String,
+	new_price: {
+		type: Number,
 		required: true
 	}
 });
