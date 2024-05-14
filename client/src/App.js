@@ -19,6 +19,9 @@ function App() {
           <Route path="/drugs" element={<Category category="drugs" />} />
           <Route path="/skin-care" element={<Category category="skin-care" />} />
           <Route path="/baby-care" element={<Category category="baby-care" />} />
+          <Route path="/home-care" element={<Category category="home-care" />} />
+          <Route path="/men-care" element={<Category category="men-care" />} />
+          <Route path="/women-care" element={<Category category="women-care" />} />
           <Route path="product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>

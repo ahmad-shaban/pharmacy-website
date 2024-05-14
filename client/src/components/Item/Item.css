@@ -2,8 +2,9 @@
     width: 350px;
 }
 .item img{
-    width: 300px;
+    max-width: 300px;
     height: 350px;
+    margin: 20px 0px 20px 0px;
 }
 .item p{
     margin:6px 0px;

@@ -32,7 +32,8 @@
 }
 .nav-menu a{
   text-decoration: none;
-  color: #333;
+  color: white;
+  font-size: 18px;
 }
 .nav-menu hr {
   border: none;
@@ -41,6 +42,47 @@
   background: #f00;
   border-radius: 10px;
 }
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100px;
+    position: absolute;
+    top: 55px;
+    background-color: #333;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 0;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    display: flex;
+  }
+  .nav-menu li {
+    margin: 10px 0;
+    color: white;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+}
+
 .login-cart {
   display: flex;
   align-items: center;
