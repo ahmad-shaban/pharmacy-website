@@ -14,10 +14,10 @@ const router = express.Router();
 router.post('/api/products', authToken, isAdmin, create_product);
 
 // Get all products
-router.get('/api/products', authToken, get_all_products);
+router.get('/api/products', get_all_products);
 
 // Get a single product by ID
-router.get('/api/products/:id', authToken, get_product_by_id);
+router.get('/api/products/:id', get_product_by_id);
 
 // Update a product
 router.put('/api/products/:id', authToken, isAdmin, update_product);

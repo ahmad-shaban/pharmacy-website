@@ -1,15 +1,8 @@
 import React from 'react';
 import './Hero.css';
 import discount from '../../assets/discount (1).svg';
-import heroImage from '../../assets/sale.svg';
 
-const scrollToPosition = (targetX, targetY) => {
-  window.scrollTo({
-    top: targetY,
-    left: targetX,
-    behavior: 'smooth',
-  });
-};
+
 const Hero = () => {
   return (
     <div className="hero">
@@ -36,7 +29,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-right">
-        <div class="introduction-text">
+        <div className="introduction-text">
           <h1>
             <span>Welcome</span> to our pharmacy
           </h1>

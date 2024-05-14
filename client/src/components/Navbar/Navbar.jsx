@@ -4,8 +4,22 @@ import cart from '../../assets/cart.svg';
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../../context/ShopContext';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    if (document.cookie.slice(0, 3) !== "jwt") {
+      navigate("/login");
+      return;
+    }
+    axios.post("/api/users/logout").then(() => {
+      navigate("/");
+    });
+  };
+
   const[menu,setMenu] = useState("drugs");
   const {getTotalCartItems}= useContext(ShopContext);
   // function toggleMenu() {
@@ -38,9 +52,11 @@ const Navbar = () => {
           <div className="bar"></div>
         </div>
       <div className="login-cart">
-        <Link to="/login"><button>Login/Signup</button></Link>
+        <button onClick={handleLogout}>{document.cookie.slice(0, 3) === "jwt" ? "Logout" : "Login / Signup"}</button>
+        {document.cookie.slice(0, 3) === "jwt" ? (<>
         <Link to="/cart"><img src={cart} alt="" /></Link>
         <div className="cart-count">{getTotalCartItems()}</div>
+        </>) : null}
       </div>
     </div>
   );

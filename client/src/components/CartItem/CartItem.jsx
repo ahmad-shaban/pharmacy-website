@@ -17,19 +17,19 @@ const CartItem = () => {
       </div>
       <hr />
       {allProducts.map((e) => {
-        if (cartItems[e.id]> 0) {
+        if (cartItems[e._id]> 0) {
           return<div>
               <div className="cart-item-format cart-format">
                 <img src={e.image} alt="" className="product-icon" />
                 <p>{e.name}</p>
                 <p>${e.new_price}</p>
-                <button className="cart-item-quantity">{cartItems[e.id]}</button>
-                <p>${e.new_price*cartItems[e.id]}</p>
+                <button className="cart-item-quantity">{cartItems[e._id]}</button>
+                <p>${e.new_price*cartItems[e._id]}</p>
                 <img className='remove-icon'
                   src={remove_icon}
                   alt=""
                   onClick={() => {
-                    removeFromCart(e.id);
+                    removeFromCart(e._id);
                   }}
                 />
               </div>

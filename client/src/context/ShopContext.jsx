@@ -1,20 +1,32 @@
-import React, { createContext, useState } from 'react';
-import allProducts from '../assets/allProducts';
+import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
 export const ShopContext = createContext(null);
 
-const CreateEmptyCart = () => {
-  let cart = {};
-  for (let index = 0; index < allProducts.length + 1; index++) cart[index] = 0;
-  return cart;
-};
+
 
 const ShopContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState(CreateEmptyCart());
+  const [allProducts, setAllProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/products/').then((res) => {
+      setAllProducts(res.data);
+    } ).catch((err) => {
+      console.log(err);
+    });
+  }, []);
+
+
+  const [cartItems, setCartItems] = useState({});
 
   const addToCart = (itemId) => {
+    if (cartItems[itemId] === undefined) {
+      setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
+      return;
+    }
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
   };
+
   console.log(cartItems);
 
   const removeFromCart = (itemId) => {
@@ -27,13 +39,14 @@ const ShopContextProvider = (props) => {
     {
       if (cartItems[item] > 0) {
         let itemInfo = allProducts.find(
-          (product) => product.id === Number(item)
+          (product) => product._id === item
         );
         totalAmount += itemInfo.new_price * cartItems[item];
       }
     }
     return totalAmount;
   };
+
 const getTotalCartItems = ()=>{
     let totalItems = 0;
     for (const item in cartItems)

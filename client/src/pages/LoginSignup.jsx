@@ -20,6 +20,16 @@ function LoginSignup() {
 				setMessage("Account created successfully");
 				setTimeout(() => {
 					setMessage("");
+					axios
+					.post("/api/users/login", {
+						email: event.target.email.value,
+						password: event.target.password.value,
+					})
+					.then((res) => {
+						console.log(res.data.token, res.data.expiresIn);
+						console.log(res.data);
+						navigate("/");
+					})
 				}, 1200);
 			})
 			.catch((err) => {
@@ -40,8 +50,6 @@ function LoginSignup() {
 			.then((res) => {
 				console.log(res.data.token, res.data.expiresIn);
 				console.log(res.data);
-				localStorage.setItem("userId", res.data.userId);
-				localStorage.setItem("role", res.data.role);
 				setMessage("Logged in successfully");
 				setTimeout(() => {
 					navigate("/");

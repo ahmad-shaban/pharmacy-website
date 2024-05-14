@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import './ProductShow.css';
 import { ShopContext } from '../../context/ShopContext';
+import { useNavigate } from 'react-router-dom';
 
 const ProductShow = (props) => {
+  const Navigate = useNavigate();
   const { product } = props;
   const {addToCart } = useContext(ShopContext)
   return (
@@ -17,11 +19,11 @@ const ProductShow = (props) => {
           <div className="new-price">${product.new_price}</div>
         </div>
         <div className="description">
-          your solution for a healthier, happier
-          life. Crafted with care and precision to meet your health and wellness
-          needs.
+          {product.description}
         </div>
-        <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
+        {document.cookie.slice(0, 3) === "jwt" ?
+        <button onClick={()=>{addToCart(product._id)}}>ADD TO CART</button> :
+        <button onClick={()=>{Navigate("/login")}}>Login To Purchase</button>}
       </div>
     </div>
   );
