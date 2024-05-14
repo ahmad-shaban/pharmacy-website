@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { version } from 'mongoose';
 
 const productSchema = new mongoose.Schema({
 	name: {
@@ -25,6 +25,6 @@ const productSchema = new mongoose.Schema({
 		type: Number,
 		required: true
 	}
-});
+}, {versionKey: false});
 
 export const Product = mongoose.model('Product', productSchema);

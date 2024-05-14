@@ -16,6 +16,7 @@ const Navbar = () => {
       return;
     }
     axios.post("/api/users/logout").then(() => {
+      localStorage.removeItem("role");
       navigate("/");
     });
   };
@@ -53,10 +54,16 @@ const Navbar = () => {
         </div>
       <div className="login-cart">
         <button onClick={handleLogout}>{document.cookie.slice(0, 3) === "jwt" ? "Logout" : "Login / Signup"}</button>
-        {document.cookie.slice(0, 3) === "jwt" ? (<>
-        <Link to="/cart"><img src={cart} alt="" /></Link>
-        <div className="cart-count">{getTotalCartItems()}</div>
-        </>) : null}
+        {
+          localStorage.getItem("role") === "Admin" ?
+          <Link to="/admin"><button>Add Product</button></Link> : null
+        }
+        {
+          document.cookie.slice(0, 3) === "jwt" ? (<>
+          <Link to="/cart"><img src={cart} alt="" /></Link>
+          <div className="cart-count">{getTotalCartItems()}</div>
+          </>) : null
+        }
       </div>
     </div>
   );
