@@ -47,7 +47,7 @@ function Profile() {
 		axios
 			.delete("/api/users/" + localStorage.getItem("userId"))
 			.then((res) => {
-				navigate("/login-signup");
+				navigate("/login");
 			})
 			.catch((err) => {
 				setMessage(err.response.data);
