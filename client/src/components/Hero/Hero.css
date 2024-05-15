@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     gap:20px;
-    padding-left: 180px;
+    padding-left: 50px;
     line-height: 1.1;
 }
 .hero-left h2{
@@ -54,7 +54,6 @@
     left: 50%;
     top: 50%;
     transform: translate(-50% , -50%);
-    z-index: 2;
     color: #333;
     text-align: center;
     max-width: 90%;
@@ -67,8 +66,27 @@
     font-size: 30px;
     margin:0 0 12px;
 }
-@media (max-width:575px){
+@media screen and (max-width: 768px) {
+    .introduction-text{
+        display: none;
+    }
+}
+/* @media (max-width:575px){
     .introduction-text h1 {
         font-size: 26px;
     }
+} */
+.scrollup-button{
+    background-color: #00000017;
+    width: 55px;
+    height: 55px;
+    font-size: 45px;
+    color: #000;
+    border-radius: 30px;
+    left: 95%;
+    bottom: 1.25rem;
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    cursor: pointer;
 }

@@ -21,7 +21,7 @@ const Navbar = () => {
     });
   };
 
-  const[menu,setMenu] = useState("drugs");
+  const[menu,setMenu] = useState();
   const {getTotalCartItems}= useContext(ShopContext);
   // function toggleMenu() {
   //   const nav = document.querySelector('nav-menu');
@@ -37,15 +37,15 @@ const Navbar = () => {
     <div className="navbar">
       <div className="nav-logo">
         <img src={logo} alt="" />
-        <Link to='/' style={{textDecoration:'none'}}><p>Pharmacy website</p></Link>
+        <Link to='/' style={{textDecoration:'none'}}><p>Dawa2y</p></Link>
       </div>
       <ul className={`nav-menu ${isActive ? 'active' : ''}`} >
         <li onClick={()=>{setMenu("drugs")}}><Link to='/drugs'>drugs</Link> {menu==="drugs"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("skin-care")}}><Link to='/skin-care'>skin care</Link>{menu==="skin-care"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("baby-care")}}><Link to='/baby-care'>baby care</Link> {menu==="baby-care"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("home-care")}}><Link to='/home-care'>home care</Link> {menu==="home-care"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("men-care")}}><Link to='/men-care'>men care</Link> {menu==="men-care"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("women-care")}}><Link to='/women-care'>women care</Link> {menu==="women-care"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("skin-care")}}><Link to='/skin-care'>skin</Link>{menu==="skin-care"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("baby-care")}}><Link to='/baby-care'>baby</Link> {menu==="baby-care"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("home-care")}}><Link to='/home-care'>home</Link> {menu==="home-care"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("men-care")}}><Link to='/men-care'>men</Link> {menu==="men-care"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("women-care")}}><Link to='/women-care'>women</Link> {menu==="women-care"?<hr/>:<></>}</li>
       </ul>
       <div className="menu-btn" onClick={toggleClass} >
           <div className="bar"></div>

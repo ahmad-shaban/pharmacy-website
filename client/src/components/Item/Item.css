@@ -1,17 +1,25 @@
 .item{
-    width: 350px;
+    border: 2px solid #777;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .item img{
-    max-width: 300px;
-    height: 350px;
+    max-width: 250px;
+    height: 300px;
     margin: 20px 0px 20px 0px;
 }
 .item p{
     margin:6px 0px;
 }
-.prices{
-    display:flex;
-    gap:20px
+.item-prices{
+    display: flex;
+    gap: 30px;
+    font-size: 30px;
+    margin: 20px 0px;
+    font-weight: 700;
 }
 .old-price{
     color: #777;
