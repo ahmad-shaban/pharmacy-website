@@ -2,11 +2,25 @@ import React, { useContext } from 'react';
 import './ProductShow.css';
 import { ShopContext } from '../../context/ShopContext';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const ProductShow = (props) => {
   const Navigate = useNavigate();
   const { product } = props;
   const {addToCart } = useContext(ShopContext)
+  
+  const handleDelete = (productId) => {
+		axios
+			.delete("/api/products/" + productId)
+			.then((res) => {
+				console.log(res.data);
+        Navigate("/");
+			})
+			.catch((err) => {
+				console.log(err.response.data);
+			});
+	};
+
   return (
     <div className="product-show">
       <div className="product-show-left">
@@ -21,9 +35,13 @@ const ProductShow = (props) => {
         <div className="description">
           {product.description}
         </div>
+        <div className='product-buttons'>
         {document.cookie.slice(0, 3) === "jwt" ?
         <button onClick={()=>{addToCart(product._id)}}>ADD TO CART</button> :
         <button onClick={()=>{Navigate("/login")}}>Login To Purchase</button>}
+        {localStorage.getItem("role") === "Admin" ?
+        <button onClick={()=>handleDelete(product._id)}>DELETE PRODUCT</button> :null}
+        </div>
       </div>
     </div>
   );

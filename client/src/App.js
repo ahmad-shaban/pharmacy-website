@@ -17,6 +17,7 @@ function App() {
     <div>
       <BrowserRouter>
       <Navbar />
+      
         <Routes>
           <Route element={<ProtectedRoutes />}>
             <Route path="/admin" element={<Admin />} />

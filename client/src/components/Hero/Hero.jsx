@@ -2,7 +2,6 @@ import React from 'react';
 import './Hero.css';
 import discount from '../../assets/discount (1).svg';
 
-
 const Hero = () => {
   return (
     <div className="hero">
@@ -36,6 +35,12 @@ const Hero = () => {
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
         </div>
       </div>
+      <div className="scrollup-button" onClick={() =>
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth',
+              })}>^</div>
     </div>
   );
 };

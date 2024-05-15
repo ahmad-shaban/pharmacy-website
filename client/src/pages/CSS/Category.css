@@ -1,6 +1,6 @@
 .products{
-    margin: 20px 170px;
+    margin: 55px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
 }   
