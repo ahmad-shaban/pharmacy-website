@@ -7,7 +7,10 @@ import Product from './pages/Product';
 import Cart from './pages/Cart';
 import LoginSignup from './pages/LoginSignup';
 import Admin from './pages/Admin';
+import Profile from './pages/Profile';
 import Footer from './components/Footer/Footer';
+import ProtectedRoutes from "./utils/ProtectedRoutes";
+
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
       <BrowserRouter>
       <Navbar />
         <Routes>
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/admin" element={<Admin />} />
+          </Route>
           <Route path="/" element={<Shop />} />
           <Route path="/drugs" element={<Category category="drugs" />} />
           <Route path="/skin-care" element={<Category category="skin-care" />} />
@@ -27,7 +33,7 @@ function App() {
           </Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
       <Footer/>

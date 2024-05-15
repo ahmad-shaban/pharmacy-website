@@ -1,0 +1,47 @@
+#profile main {
+  width: 69%;
+  min-height: calc(100vh - 112px);
+  margin: 0 auto;
+}
+
+#profile main > h1 {
+  padding-top: 70px;
+  margin-bottom: 20px;
+}
+
+#profile input[type='text'],
+#profile input[type='password'],
+#profile input[type='email'] {
+  width: 60%;
+  height: 20px;
+  background: #eee;
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+}
+
+#profile input[type='submit'] {
+  margin: 20px;
+  width: 110px;
+  padding: 7px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(255, 183, 0);
+  text-align: center;
+}
+#profile button {
+  margin: 5px 20px 30px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 110px;
+  padding: 7px;
+  cursor: pointer;
+  background-color: rgb(255, 183, 0);
+  text-align: center;
+}

@@ -50,6 +50,7 @@ function LoginSignup() {
 			.then((res) => {
 				console.log(res.data.token, res.data.expiresIn);
 				console.log(res.data);
+				localStorage.setItem("userId", res.data.userId);
 				localStorage.setItem("role", res.data.role);
 				setMessage("Logged in successfully");
 				setTimeout(() => {
