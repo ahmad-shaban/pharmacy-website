@@ -103,6 +103,7 @@ const delete_one_user = async (req, res) => {
 				}
 			}
 			await User.findByIdAndDelete(req.params.id);
+			res.clearCookie("jwt");
 			res.status(200).send("Deleted successfully");
 		}
 	} catch (err) {
