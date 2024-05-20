@@ -77,16 +77,14 @@
     }
 } */
 .scrollup-button{
-    background-color: #00000017;
     width: 55px;
     height: 55px;
     font-size: 45px;
     color: #000;
-    border-radius: 30px;
     left: 95%;
     bottom: 1.25rem;
     position: fixed;
-    text-align: center;
     z-index: 1;
     cursor: pointer;
+    opacity: 60%;
 }
